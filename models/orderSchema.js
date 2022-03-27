@@ -8,6 +8,5 @@ const orderSchema=new mongoose.Schema({
     price:Number
 } );
 module.exports={
-    orderSchema,
-   
+    orderSchema
 }

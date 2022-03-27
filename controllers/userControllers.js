@@ -1,6 +1,6 @@
-const { User } = require('../models/userModel');
+const {User} = require('../models/userModels');
 
-const addUser=async(req,res)=>{
+const addUser = async(req, res) => {
     let user = new User(req.body);
     try {
         await user.save();
@@ -8,7 +8,7 @@ const addUser=async(req,res)=>{
     }
     catch (err) {
         return res.status(400).send(err);
-    }   
+    }
 
 }
 
@@ -23,14 +23,14 @@ const getAllItemsByUserId = async (req, res) => {
     }
 }
 
-const addOrder = async (req, res) => {
+const addOrder = async(req, res) => {
 
-    User.findById(req.params.id, function (err, result) {
+    User.findById(req.params.id,async function (err, result) {
         if (!err) {
             if (!result) {
               await addUser();
             }
-            else {   result.arr_orders.push(req.body.newOrder);
+            else {result.arr_orders.push(req.body.newOrder);
                await result.markModified('arr_orders');
                await result.save(function (saverr, saveresult) {
                     if (!saverr) {

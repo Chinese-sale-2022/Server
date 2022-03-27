@@ -1,4 +1,5 @@
 const mongoose=require("mongoose");
+const orderSchema=require('./orderSchema').orderSchema;
 
 const userSchema=new mongoose.Schema({
     user_first_name: { type: String, match: /[A-Z a-z]/ },

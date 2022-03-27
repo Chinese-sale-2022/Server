@@ -1,4 +1,4 @@
-const Item=require("../models/itemsModels").Item;
+const {Item}=require("../models/itemsModels").Item;
 
 //פונקציה לשליפת כל המוצרים
 const getAllItems= async(req, res)=>{

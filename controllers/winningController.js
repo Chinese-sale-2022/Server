@@ -1,5 +1,5 @@
-const Winning = require("../models/winningModel").Winning;
-const Item = require("../models/item").Item;
+const {Winning} = require("../models/winningModel").Winning;
+const {Item} = require("../models/item").Item;
 
 const addWinnig = async (req, res) => {
     try {
