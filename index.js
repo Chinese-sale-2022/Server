@@ -1,15 +1,17 @@
 const express = require('express')
 const cors = require('cors')
-const items = require('./items')
-const users = require('./users')
-const winning = require('./winning')
+const items = require('./routes/itemsRoutes')
+const users = require('./routes/userRoutes')
+const winning = require('./routes/winningRouter')
 const app = express()
+const app=express()
+ const mongoose = require("mongoose");
+ mongoose.connect("mongodb://localhost:27017/chineseAuctionch").then(() => {
+    console.log("connected to mogodb")
 
-
-app.use(express.json()) 
+}).catch(err => console.log(err));
+app.use(express.json)
 app.use(cors())
-
-// controllers
 app.use(items)
 app.use(users)
 app.use(winning)
